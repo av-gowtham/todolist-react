@@ -12,16 +12,16 @@ function App() {
 
   function handleAddTodo(newTodo) {
     const newTodoList = [...todos, newTodo];
-    persistData(newTodoList);
     setTodos(newTodoList);
+    persistData(newTodoList);
   }
 
   function handleDeleteTodo(index) {
     const newTodoList = todos.filter((todo, todoIndex) => {
       return todoIndex != index;
     });
-    persistData(newTodoList);
     setTodos(newTodoList);
+    persistData(newTodoList);
   }
 
   function handleEditTodo(index) {
