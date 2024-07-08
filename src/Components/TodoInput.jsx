@@ -27,5 +27,5 @@ export default TodoInput;
 TodoInput.propTypes = {
   handleAddTodo: PropTypes.func,
   todoValue: PropTypes.string,
-  setTodoValue: PropTypes.string,
+  setTodoValue: PropTypes.func,
 };
