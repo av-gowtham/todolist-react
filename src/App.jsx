@@ -30,18 +30,25 @@ function App() {
     handleDeleteTodo(index);
   }
 
+  // useEffect(() => {
+  //   if (!window.localStorage) {
+  //     return;
+  //   }
+
+  //   let localTodos = localStorage.getItem("todos");
+  //   if (!localTodos) {
+  //     return;
+  //   }
+
+  //   localTodos = JSON.parse(localTodos).todos;
+  //   setTodos(localTodos);
+  // }, []);
+
   useEffect(() => {
-    if (!window.localStorage) {
-      return;
+    const storedTodos = localStorage.getItem("todos");
+    if (storedTodos) {
+      setTodos(JSON.parse(storedTodos).todos);
     }
-
-    let localTodos = localStorage.getItem("todos");
-    if (!localTodos) {
-      return;
-    }
-
-    localTodos = JSON.parse(localTodos).todos;
-    setTodos(localTodos);
   }, []);
 
   return (
