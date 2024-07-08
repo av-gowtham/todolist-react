@@ -1,19 +1,23 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
 
 function TodoInput(props) {
-  const { handleAddTodo } = props;
-
-  const [newValue, setNewValue] = useState("");
+  const { handleAddTodo, todoValue, setTodoValue } = props;
 
   return (
     <header>
       <input
-        value={newValue}
-        onChange={(e) => setNewValue(e.target.value)}
+        value={todoValue}
+        onChange={(e) => setTodoValue(e.target.value)}
         placeholder="Enter todo..."
       ></input>
-      <button onClick={handleAddTodo(newValue)}>Add</button>
+      <button
+        onClick={() => {
+          handleAddTodo(todoValue);
+          setTodoValue("");
+        }}
+      >
+        Add
+      </button>
     </header>
   );
 }
@@ -22,4 +26,6 @@ export default TodoInput;
 
 TodoInput.propTypes = {
   handleAddTodo: PropTypes.func,
+  todoValue: PropTypes.string,
+  setTodoValue: PropTypes.string,
 };

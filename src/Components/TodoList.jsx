@@ -7,7 +7,14 @@ function TodoList(props) {
   return (
     <ul className="main">
       {todos.map((todo, todoIndex) => {
-        return <TodoCard key={todoIndex} todo={todo}></TodoCard>;
+        return (
+          <TodoCard
+            {...props}
+            index={todoIndex}
+            key={todoIndex}
+            todo={todo}
+          ></TodoCard>
+        );
       })}
     </ul>
   );
@@ -21,4 +28,5 @@ TodoList.propTypes = {
       id: PropTypes.number.isRequired,
     })
   ).isRequired,
+  handleDeleteTodo: PropTypes.func,
 };
