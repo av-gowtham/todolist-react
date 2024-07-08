@@ -31,7 +31,7 @@ function App() {
   }
 
   useEffect(() => {
-    if (!localStorage) {
+    if (!window.localStorage) {
       return;
     }
 
