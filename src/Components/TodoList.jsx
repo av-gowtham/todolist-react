@@ -1,5 +1,24 @@
-function TodoList() {
-  return <div>TodoList</div>;
+import TodoCard from "./TodoCard";
+import PropTypes from "prop-types";
+
+function TodoList(props) {
+  const { todos } = props;
+
+  return (
+    <ul className="main">
+      {todos.map((todo, todoIndex) => {
+        return <TodoCard key={todoIndex} todo={todo}></TodoCard>;
+      })}
+    </ul>
+  );
 }
 
 export default TodoList;
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
