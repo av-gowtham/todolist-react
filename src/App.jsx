@@ -8,10 +8,6 @@ function App() {
 
   function persistData(newlist) {
     localStorage.setItem("todos", JSON.stringify({ todos: newlist }));
-    console.log(
-      localStorage.setItem("todos", JSON.stringify({ todos: newlist })),
-      "local"
-    );
   }
 
   function handleAddTodo(newTodo) {
@@ -53,7 +49,6 @@ function App() {
     if (storedTodos) {
       setTodos(JSON.parse(storedTodos).todos);
     }
-    console.log("useeffect dome", JSON.parse(storedTodos).todos);
   }, []);
 
   return (

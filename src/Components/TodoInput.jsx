@@ -12,6 +12,10 @@ function TodoInput(props) {
       ></input>
       <button
         onClick={() => {
+          if (!todoValue) {
+            alert("Enter todo");
+            return;
+          }
           handleAddTodo(todoValue);
           setTodoValue("");
         }}
