@@ -20,10 +20,6 @@ function TodoList(props) {
 export default TodoList;
 
 TodoList.propTypes = {
-  todos: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    })
-  ).isRequired,
+  todos: PropTypes.array.isRequired,
   handleDeleteTodo: PropTypes.func,
 };

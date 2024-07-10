@@ -19,7 +19,7 @@ function TodoCard({ children, handleDeleteTodo, index, handleEditTodo }) {
 export default TodoCard;
 
 TodoCard.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.object,
   handleDeleteTodo: PropTypes.func,
   handleEditTodo: PropTypes.func,
   index: PropTypes.number,
